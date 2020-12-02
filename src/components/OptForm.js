@@ -1,6 +1,7 @@
-import styled from "styled-components/macro";
+import React from "react";
+import styled from 'styled-components/macro'
 
-export const Container = styled.div`
+const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
@@ -13,7 +14,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Input = styled.input`
+const Input = styled.input`
   max-width: 450px;
   width: 100%;
   border: 0;
@@ -22,7 +23,7 @@ export const Input = styled.input`
   box-sizing: border-box;
 `;
 
-export const Button = styled.button`
+const Button = styled.button`
   display: flex;
   align-items: center;
   height: 100%;
@@ -33,7 +34,7 @@ export const Button = styled.button`
   padding: 0 32px;
   font-size: 26px;
   border: 0;
-  margin: .25em auto;
+  margin: 0.25em auto;
   cursor: pointer;
 
   img {
@@ -58,7 +59,7 @@ export const Button = styled.button`
   }
 `;
 
-export const Text = styled.p`
+const Text = styled.p`
   font-size: 19.2px;
   color: white;
   text-align: center;
@@ -69,7 +70,18 @@ export const Text = styled.p`
   }
 `;
 
-export const Break = styled.div`
+const Break = styled.div`
   flex-basis: 100%;
   height: 0;
 `;
+
+export default function OptForm({ message, buttonText }) {
+  return (
+    <Container>
+      <Text>{message}</Text>
+      <Input placeholder="Email address" />
+      <Break />
+      <Button>{buttonText}</Button>
+    </Container>
+  );
+}
