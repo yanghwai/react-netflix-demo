@@ -1,24 +1,27 @@
-import { Jumbotron } from "../components";
+import { SubTitle, Title } from "../components/CommonStyled";
+import { Container, Item, Inner, Pane, Image } from "../components/Jumbotron";
 import jumboData from "../fixtures/jumbotron.json";
 
 function JumbotronContainer() {
   return (
-    <Jumbotron.Container>
+    <Container>
       {jumboData.map((item, index) => {
         const itemDirection = index % 2 === 0 ? "row" : "row-reverse";
         return (
-          <Jumbotron key={item.id} direction={itemDirection}>
-            <Jumbotron.Pane>
-              <Jumbotron.Title>{item.title}</Jumbotron.Title>
-              <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
-            </Jumbotron.Pane>
-            <Jumbotron.Pane>
-              <Jumbotron.Image src={item.image} alt={item.alt} />
-            </Jumbotron.Pane>
-          </Jumbotron>
+          <Item key={item.id}>
+            <Inner direction={itemDirection}>
+              <Pane>
+                <Title>{item.title}</Title>
+                <SubTitle>{item.subTitle}</SubTitle>
+              </Pane>
+              <Pane>
+                <Image src={item.image} alt={item.alt} />
+              </Pane>
+            </Inner>
+          </Item>
         );
       })}
-    </Jumbotron.Container>
+    </Container>
   );
 }
 
