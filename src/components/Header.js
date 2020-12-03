@@ -2,17 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
-const Background = styled.div`
-  display: flex;
-  flex-direction: column;
-  background: url("../images/misc/home-bg.jpg") top left / cover no-repeat;
-
-  @media (max-width: 1100px) {
-    ${({ dontShowOnSmallViewPort }) =>
-      dontShowOnSmallViewPort && `background: none;`}
-  }
-`;
-
 const Logo = styled.img`
   height: 32px;
   width: 108px;
@@ -60,8 +49,8 @@ const Button = styled(Link)`
   }
 `;
 
-function Header({ bg = true, link = "#", ...restProps }) {
-  const children = (
+function Header({ link = "#", ...restProps }) {
+  return (
     <Container>
       <Link to={link}>
         <Logo src="/images/misc/logo.svg" alt="Netflix" />
@@ -69,7 +58,6 @@ function Header({ bg = true, link = "#", ...restProps }) {
       <Button to="/signin">Sign In</Button>
     </Container>
   );
-  return bg ? <Background {...restProps}>{children}</Background> : children;
 }
 
 export default Header;

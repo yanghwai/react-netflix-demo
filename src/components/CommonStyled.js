@@ -20,5 +20,13 @@ export const SubTitle = styled.h2`
   }
 `;
 
+export const Background = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: url("${(props) => props.src}") top left / cover no-repeat;
 
-
+  @media (max-width: 1100px) {
+    ${({ dontShowOnSmallViewPort }) =>
+      dontShowOnSmallViewPort && `background: none;`}
+  }
+`;

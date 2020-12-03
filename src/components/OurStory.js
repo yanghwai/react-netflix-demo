@@ -7,7 +7,7 @@ export default function OurStory() {
   return (
     <Container>
       <Item>
-        <Inner>
+        <Inner width="75%">
           <Pane width="100%">
             <div style={{textAlign: "center"}}>
               <Title>Unlimited movies, TV shows, and anime.</Title>

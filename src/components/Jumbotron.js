@@ -8,7 +8,7 @@ export const Inner = styled.div`
   flex-direction: ${({ direction }) => direction};
   max-width: 1100px;
   margin: auto;
-  width: 100%;
+  width: ${(props) => (props.width ? props.width : "100%")};
 
   @media (max-width: 1000px) {
     flex-direction: column;
