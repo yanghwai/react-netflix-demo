@@ -1,8 +1,9 @@
-import * as ROUTES from "./consts/route";
 import { BrowserRouter, Route } from "react-router-dom";
+import * as ROUTES from "./consts/route";
 import { Home } from "./pages/home";
-import Signup from "./pages/signup";
 import { Signin } from "./pages/signin";
+import Signup from "./pages/signup";
+import Debug from "./pages/debug"
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       </Route>
       <Route exact path={ROUTES.SIGN_UP}>
         <Signup />
+      </Route>
+      <Route exact path={ROUTES.DEBUG}>
+        <Debug/>
       </Route>
     </BrowserRouter>
   );

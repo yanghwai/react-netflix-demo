@@ -1,12 +1,13 @@
 import React from "react";
-import styled from 'styled-components/macro'
+import styled from "styled-components/macro";
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100%;
   margin-top: 20px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -18,7 +19,7 @@ const Input = styled.input`
   max-width: 450px;
   width: 100%;
   border: 0;
-  padding: 10px;
+  padding: 10px 10px 0;
   height: 70px;
   box-sizing: border-box;
 `;
@@ -75,13 +76,19 @@ const Break = styled.div`
   height: 0;
 `;
 
+const EmailFormLockup = styled.div`
+  text-align: center;
+`;
+
 export default function OptForm({ message, buttonText }) {
   return (
     <Container>
       <Text>{message}</Text>
-      <Input placeholder="Email address" />
-      <Break />
-      <Button>{buttonText}</Button>
+      <EmailFormLockup>
+        <Input placeholder="Email address" />
+        <Break/>
+        <Button>{buttonText}</Button>
+      </EmailFormLockup>
     </Container>
   );
 }
