@@ -28,8 +28,7 @@ export const Title = styled.h1`
 
 export const Item = styled.div`
   color: white;
-  margin-bottom: 10px;
-  margin: auto;
+  margin: 0 0 8px 0;
   max-width: 670px;
   width: 100%;
 
